@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
   crossorigin=""/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> <!-- Semantic UI -->
   <link rel="stylesheet" href="./styles.css">
+  
   
   <title>Frontend Mentor | IP Address Tracker</title>
 </head>
@@ -16,14 +18,74 @@
 <div class="top-image">
   <img src="./images/pattern-bg-desktop.png" alt="">
 </div>
-<!-- <div class="map-wrap">
 
-</div> -->
+<!-- overlaps over the top image -->
+<div class="full-ip-content-wrap">
+  <div class="ip-content">
+    <h2>IP Address Tracker</h2>
+    <div class="ui search">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Search IP...">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
+  </div>
+
+
+  <div class="ui placeholder segment">
+    <div class="ui four column very relaxed stackable grid">
+      <div class="column divider">
+        <div class="ui form">
+          <div class="field">
+            <label>IP Address</label>
+            <p id="ip-address">192.212.174.101</p>
+          </div>
+        </div>
+      </div>
+      <div class="column divider">
+        <div class="ui form">
+          <div class="field">
+            <label>Location</label>
+            <p id="location">Brooklyn, NY 10001</p>
+          </div>
+        </div>
+      </div>
+      <div class="column divider">
+        <div class="ui form">
+          <div class="field">
+            <label>Timezone</label>
+            <p id="timezone">UTC - 05:00</p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui form">
+          <div class="field">
+            <label>ISP</label>
+            <p id="isp">SpaceX Starlink</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
 
 <div id="map"></div>
 
-
-<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
 crossorigin=""></script>
