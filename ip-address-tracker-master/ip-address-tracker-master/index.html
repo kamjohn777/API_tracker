@@ -1,113 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossorigin=""/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> <!-- Semantic UI -->
-  <link rel="stylesheet" href="./styles.css">
-  
-  
-  <title>Frontend Mentor | IP Address Tracker</title>
-</head>
-<body>
-<div class="top-image">
-  <img src="./images/pattern-bg-desktop.png" alt="">
-</div>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="./styles.css" />
 
-<!-- overlaps over the top image -->
-<div class="full-ip-content-wrap">
-  <div class="ip-content">
-    <h2>IP Address Tracker</h2>
-    <div class="ui search">
-      <div class="ui icon input">
-        <input class="prompt" type="text" placeholder="Search IP...">
-        <i class="search icon"></i>
-      </div>
-      <div class="results"></div>
+    <title>Frontend Mentor | IP Address Tracker</title>
+  </head>
+  <body>
+    <div class="top-image">
+      <img src="./images/pattern-bg-desktop.png" alt="" />
     </div>
-  </div>
 
+    <!-- overlaps over the top image -->
+    <div class="full-ip-content-wrap">
+      <div class="ip-content">
+        <h2>IP Address Tracker</h2>
+        <div class="ui search">
+          <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Search IP..." />
+            <i class="search icon"></i>
+          </div>
+          <div class="results"></div>
+        </div>
+      </div>
 
-  <div class="ui placeholder segment">
-    <div class="ui four column very relaxed stackable grid">
-      <div class="column divider">
-        <div class="ui form">
-          <div class="field">
-            <label>IP Address</label>
-            <p class="txt-ip-box" id="ip-address">192.212.174.101</p>
+      <div class="ui placeholder segment">
+        <div class="ui four column very relaxed stackable grid">
+          <div class="column divider">
+            <div class="ui form">
+              <div class="field">
+                <label>IP Address</label>
+                <p class="txt-ip-box" id="ip-address">192.212.174.101</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="column divider">
-        <div class="ui form">
-          <div class="field">
-            <label>Location</label>
-            <p class="txt-ip-box" id="location">Brooklyn, NY 10001</p>
+          <div class="column divider">
+            <div class="ui form">
+              <div class="field">
+                <label>Location</label>
+                <p class="txt-ip-box" id="location">Brooklyn, NY 10001</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="column divider">
-        <div class="ui form">
-          <div class="field">
-            <label>Timezone</label>
-            <p class="txt-ip-box" id="timezone">UTC - 05:00</p>
+          <div class="column divider">
+            <div class="ui form">
+              <div class="field">
+                <label>Timezone</label>
+                <p class="txt-ip-box" id="timezone">UTC - 05:00</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="ui form">
-          <div class="field">
-            <label>ISP</label>
-            <p class="txt-ip-box" id="isp">SpaceX Starlink</p>
+          <div class="column">
+            <div class="ui form">
+              <div class="field">
+                <label>ISP</label>
+                <p class="txt-ip-box" id="isp">SpaceX Starlink</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
+    <div id="map"></div>
 
+    <!-- Add this where you want the button to open the modal -->
+    <button class="ui button" id="open-modal">Show Testable IPs</button>
 
-</div>
+    <!-- Add this at the end of your body, just before the scripts -->
+    <div class="ui modal" id="ip-modal">
+      <i class="close icon"></i>
+      <div class="header">Testable IP Addresses</div>
+      <div class="content">
+        <ul>
+          <li>8.8.8.8 (Google's public DNS server)</li>
+          <li>1.1.1.1 (Cloudflare's DNS server)</li>
+          <li>208.67.222.222 (OpenDNS's server)</li>
+        </ul>
+      </div>
+    </div>
 
-
-
-
-
-
-
-
-
-<div id="map"></div>y
-
-
-<!-- Add this where you want the button to open the modal -->
-<button class="ui button" id="open-modal">Show Testable IPs</button>
-
-<!-- Add this at the end of your body, just before the scripts -->
-<div class="ui modal" id="ip-modal">
-  <i class="close icon"></i>
-  <div class="header">
-    Testable IP Addresses
-  </div>
-  <div class="content">
-    <ul>
-      <li>8.8.8.8 (Google's public DNS server)</li>
-      <li>1.1.1.1 (Cloudflare's DNS server)</li>
-      <li>208.67.222.222 (OpenDNS's server)</li>
-    </ul>
-  </div>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-crossorigin=""></script>
-<script src="./script.js"></script>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
