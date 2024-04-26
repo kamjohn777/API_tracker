@@ -44,3 +44,19 @@ function fetchData(ip) {
         }
     }
   });
+
+  $('.search.icon').click(function() {
+    var ip = $('.prompt').val();
+    if (validateIP(ip)) {
+      fetchData(ip);
+    } else {
+      alert("Please enter a valid IP address.");
+    }
+  });
+
+  $(document).ready(function() {
+    $('#open-modal').click(function() {
+      $('#ip-modal').modal('show');
+    });
+  });
+

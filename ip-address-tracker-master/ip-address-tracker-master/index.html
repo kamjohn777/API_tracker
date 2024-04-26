@@ -39,7 +39,7 @@
         <div class="ui form">
           <div class="field">
             <label>IP Address</label>
-            <p id="ip-address">192.212.174.101</p>
+            <p class="txt-ip-box" id="ip-address">192.212.174.101</p>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
         <div class="ui form">
           <div class="field">
             <label>Location</label>
-            <p id="location">Brooklyn, NY 10001</p>
+            <p class="txt-ip-box" id="location">Brooklyn, NY 10001</p>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
         <div class="ui form">
           <div class="field">
             <label>Timezone</label>
-            <p id="timezone">UTC - 05:00</p>
+            <p class="txt-ip-box" id="timezone">UTC - 05:00</p>
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@
         <div class="ui form">
           <div class="field">
             <label>ISP</label>
-            <p id="isp">SpaceX Starlink</p>
+            <p class="txt-ip-box" id="isp">SpaceX Starlink</p>
           </div>
         </div>
       </div>
@@ -82,7 +82,26 @@
 
 
 
-<div id="map"></div>
+<div id="map"></div>y
+
+
+<!-- Add this where you want the button to open the modal -->
+<button class="ui button" id="open-modal">Show Testable IPs</button>
+
+<!-- Add this at the end of your body, just before the scripts -->
+<div class="ui modal" id="ip-modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Testable IP Addresses
+  </div>
+  <div class="content">
+    <ul>
+      <li>8.8.8.8 (Google's public DNS server)</li>
+      <li>1.1.1.1 (Cloudflare's DNS server)</li>
+      <li>208.67.222.222 (OpenDNS's server)</li>
+    </ul>
+  </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
