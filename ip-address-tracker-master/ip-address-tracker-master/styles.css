@@ -77,7 +77,7 @@ s .ui.four.column.grid > .column.divider:not(:last-child)::after {
   .full-ip-content-wrap {
     display: flex;
     position: absolute;
-    z-index: 1; /* Lower the z-index so it doesn't block other elements */
+    z-index: 1;
     top: 0px;
     left: 50%;
     transform: translateX(-50%);
@@ -87,7 +87,6 @@ s .ui.four.column.grid > .column.divider:not(:last-child)::after {
     flex-direction: column;
     justify-content: space-between;
     padding-top: 10px;
-    /* background-color: rgba(0, 0, 0, 0.5);  */
   }
 
   #map {
@@ -95,11 +94,10 @@ s .ui.four.column.grid > .column.divider:not(:last-child)::after {
     width: 100%;
     z-index: 0;
     margin-top: 340px;
-    /* margin-top: 400px; */
   }
 
   #open-modal {
-    margin-top: 20px; /* Adjust this value as needed */
+    margin-top: 20px; 
   }
 
   .ui.icon.input {
